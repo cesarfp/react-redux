@@ -26,6 +26,10 @@ class Counter extends Component {
         }
     }
 
+    componentDidUpdate(){
+        
+    }
+
     render () {
         return (
             <div>
@@ -38,7 +42,7 @@ class Counter extends Component {
                 <button onClick={this.props.onStoreResult}>Store Result</button>
                 <ul>
                     {this.props.storedResults.map(strResult => (
-                        <li key={strResult.id} onClick={this.props.onDeleteResult}>{strResult.value}</li>
+                        <li key={strResult.id} onClick={()=>this.props.onDeleteResult(strResult.id)}>{strResult.value}</li>
                     ))}
                     
                 </ul>
@@ -62,7 +66,7 @@ const mapDispatchProps = dispatch => {
         onAddCounter: () => dispatch({type: 'ADD', val:10}),
         onSubstractCounter: () => dispatch({type: 'SUBSTRACT', val:8}),
         onStoreResult: () => dispatch({type: 'STORE_RESULT'}),
-        onDeleteResult: () => dispatch({type: 'DELETE_RESULT'})
+        onDeleteResult: (id) => dispatch({type: 'DELETE_RESULT',resultElId:id})
     }
 }
 
