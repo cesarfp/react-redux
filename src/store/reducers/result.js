@@ -21,11 +21,9 @@ const reducer = (state = initialState, action) => {
 				results:updatedArray
 			}
 		
-		// default:
-		// 	return state
+		default:
+			return state
 	}
-
-	return state
 
 }
 

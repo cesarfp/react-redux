@@ -28,12 +28,9 @@ const reducer = (state = initialState, action) => {
 				counter: state.counter - action.val
 			}
 		
-		
-		// default:
-		// 	return state
+		default:
+			return state
 	}
-
-	return state;
 
 }
 
